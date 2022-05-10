@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>n-queens </title>
+    <link href="css/styles.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="tips">
+      <p>Tips for game:</p>
+      <ul>
+        <li>Our third constraint prohibits queens on the same row.</li>
+        <li>Our constraints propagated, we can test out another hypothesis, and place a second queen on one of the available remaining squares. Our solver might decide to place in it the first available square in the second column.</li>
+        <li>After propagating the diagonal constraint, we can see that it leaves no available squares in either the third column or last row.</li>
+       <li>Since there can be no queen in the corner, the solver moves the first queen down by one, and propagates, leaving only one spot for the second queen.</li>
+       <li>when boring click solver button</li>
+      </ul>
+    </div>
+
+    <div class="button"><a href="BoardViewer.html">solver</a></div>
+
+    <header>
+ <script src="lib/jquery-1.8.3.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script src="lib/backbone.js"></script>
+    <script src="src/Board.js"></script>
+    <script src="src/BoardView.js"></script>
+    <script src="src/solvers.js"></script>
+    <script>
+      window.displayBoard = function(matrix){
+        $('header').html(
+          new BoardView({
+            model: new Board(matrix)
+          }).render()
+        );
+      };
+      $(function(){
+
+        displayBoard([
+          [0, 1, 0, 0],
+          [0, 0, 0, 1],
+          [1, 0, 0, 0],
+          [0, 0, 1, 0]
+        ]);
+
+        var n = 4;
+        findNRooksSolution(n);
+        countNRooksSolutions(n);
+        findNQueensSolution(n);
+        countNQueensSolutions(n);
+      });
+    </script>
+    </header>
+
+
+
+  </body>
+</html>

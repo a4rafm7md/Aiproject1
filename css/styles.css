@@ -1,0 +1,36 @@
+.square {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.positive {
+  background-color: lightgrey;
+}
+
+.negative {
+  background-color: grey;
+}
+
+.inConflict{
+  background-color: red;
+}
+.button{
+  float:right;
+  background-color: rgb(104, 101, 101);
+  padding-left:10px;
+  padding-right:10px;
+  border-radius: 20px;
+  margin-top :300px;
+
+}
+.button a{
+  text-decoration: none;
+  color: white;
+
+}
+.tips{
+  float: right;
+  direction: ltr;
+  width: 500px;
+}
